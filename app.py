@@ -18,12 +18,12 @@ class College(BaseModel):
 # GET /input route (Step 1)
 @app.get("/input")
 def college_data(email: str):
-    Y = [1, 70, 80, 20, 90, 30]  # Simulated list
+    numbers = [1, 70, 80, 20, 90, 30]  # Simulated list
     secret_key = random.randint(1000000000, 9999999999)  # Random 10-digit key
 
     return {
         "email": email,
-        "Data": json.dumps(Y),   # API expects list as JSON string
+        "Data": numbers,   
         "Secret": secret_key
     }
 
